@@ -53,6 +53,8 @@ public class bindingAdvice {
 
     @Before("execution(* com.example.bootspecialstudy.web..*Controller.*(..))")
     public void logCheck() {
+        // 전 처리때는 request 값을 처리 못하나요 ?
+        // log 처리는 ? 파일로 어떻게 남길까 ?
         System.out.println("로그를 남김");
     }
 
