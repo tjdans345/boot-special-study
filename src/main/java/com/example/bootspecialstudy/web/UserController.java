@@ -2,11 +2,17 @@ package com.example.bootspecialstudy.web;
 
 import com.example.bootspecialstudy.domain.User;
 import com.example.bootspecialstudy.domain.UserRepository;
+import com.example.bootspecialstudy.domain.dto.JoinReqDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
@@ -34,10 +40,8 @@ public class UserController {
 
     @PostMapping("/user")
     // x-www-form-urlencoded => request.getParameter()
-    public ResponseEntity<?> save(User user) {
-
+    public ResponseEntity<?> save(@Valid @RequestBody JoinReqDto dto) {
         return new ResponseEntity<>("ok", HttpStatus.OK);
-
     }
 
     @DeleteMapping("/user/{id}")
