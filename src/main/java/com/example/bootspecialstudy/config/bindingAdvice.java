@@ -2,6 +2,7 @@ package com.example.bootspecialstudy.config;
 
 
 import com.example.bootspecialstudy.domain.dto.CommonDto;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -50,7 +51,7 @@ public class bindingAdvice {
     }
 
     @Before("execution(* com.example.bootspecialstudy.web..*Controller.*(..))")
-    public void logCheck() {
+    public void logCheck(JoinPoint joinPoint) {
         // 전 처리때는 request 값을 처리 못하나요 ?
         // log 처리는 ? 파일로 어떻게 남길까 ?
         System.out.println("로그를 남김");
