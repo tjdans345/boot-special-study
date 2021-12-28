@@ -34,11 +34,9 @@ public class bindingAdvice {
 //        System.out.println("method : " + method);
 
         Object[] args = proceedingJoinPoint.getArgs();
-
         for (Object arg: args) {
             if(arg instanceof BindingResult) {
                 BindingResult bindingResult = (BindingResult) arg;
-
                 if(bindingResult.hasErrors()) {
                     Map<String, String> errorMap = new HashMap<>();
                     for (FieldError error : bindingResult.getFieldErrors()) {
