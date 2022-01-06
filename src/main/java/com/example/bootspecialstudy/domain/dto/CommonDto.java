@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class CommonDto<T> {
-
     private int code;
     private T data;
 }
