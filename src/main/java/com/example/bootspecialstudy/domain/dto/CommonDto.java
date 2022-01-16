@@ -2,8 +2,7 @@ package com.example.bootspecialstudy.domain.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

@@ -40,7 +40,7 @@ public class UserController {
 
     @PostMapping("/user")
     // x-www-form-urlencoded => request.getParameter()
-    public ResponseEntity<?> save(@Valid @RequestBody JoinReqDto dto) {
+    public ResponseEntity<?> save(@Valid @RequestBody JoinReqDto dto, BindingResult bindingResult) {
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 
