@@ -1,7 +1,4 @@
-
-
 spring:
-
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     username: meteor4
@@ -19,7 +16,11 @@ spring:
     show_sql: true
     generate-ddl: false
     properties:
-      hibernate.format_sql: true
+      hibernate.format_sql: false
     defer-datasource-initialization: true
 server:
   port: 8083
+
+sentry:
+  dsn: https://989a66639b44467aa94c61fde926cc67@o1117813.ingest.sentry.io/6151643
+  enable-tracing: true

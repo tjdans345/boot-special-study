@@ -2,6 +2,7 @@ package com.example.bootspecialstudy.config;
 
 
 import com.example.bootspecialstudy.domain.dto.CommonDto;
+import io.sentry.Sentry;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -52,6 +53,7 @@ public class BindingAdvice {
                         errorMap.put(error.getField(), error.getDefaultMessage());
                         // 로그에는 여러가지 레벨이 있다. error, warn, info, debug
                         log.warn(type+"."+method+"() -> 필드 : " +error.getField() + ", 메시지 : " + error.getDefaultMessage());
+                        Sentry.captureException(new Exception(" anjsep "));
                         // 오류가 생겼을 때 DB연결 후 DB에 남기기.
                         // 파일로 남기기 -> 좋지 않은 방법이다.
                         // 센트리
